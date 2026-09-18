@@ -19,52 +19,80 @@ const products = [
 export default function Home() {
   return (
     <main className="bg-[#F5F0E7] text-[#343A31]">
-      {/* HERO */}
+
+      {/* =========================================================
+          HERO
+      ========================================================= */}
       <section
         className="relative min-h-[92vh] overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/willow-background.png')",
         }}
       >
+        {/* Soft cream overlay */}
         <div className="absolute inset-0 bg-[#F7F1E7]/10" />
 
+        {/* Soft transition into next section */}
         <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-b from-transparent via-[#F5F0E7]/45 to-[#F5F0E7]" />
 
-        <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 pb-28 pt-36 text-center md:pt-40">
-          <Image
-            src="/willow-tallow-logo.PNG"
-            alt="Willow & Tallow"
-            width={700}
-            height={700}
-            priority
-            className="h-auto w-full max-w-[440px] md:max-w-[540px]"
-          />
+        {/* Hero content */}
+        <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-5 pb-24 pt-32 text-center sm:px-6 md:pb-28 md:pt-36">
 
-          <p className="-mt-8 font-serif text-xl italic tracking-wide text-[#69715F] md:-mt-12 md:text-[1.65rem]">
+          {/* Main logo */}
+          <div className="flex w-full justify-center">
+            <Image
+              src="/willow-tallow-logo.PNG"
+              alt="Willow & Tallow"
+              width={1200}
+              height={800}
+              priority
+              className="
+                h-auto
+                w-[94%]
+                max-w-[540px]
+                object-contain
+                sm:max-w-[620px]
+                md:max-w-[740px]
+                lg:max-w-[820px]
+                xl:max-w-[860px]
+              "
+            />
+          </div>
+
+          {/* Tagline */}
+          <p className="-mt-5 font-serif text-xl italic tracking-[0.025em] text-[#69715F] sm:-mt-6 sm:text-2xl md:-mt-8 md:text-[1.8rem]">
             Rooted in Nature. Crafted with Tallow.
           </p>
 
-          <p className="mx-auto mt-7 max-w-xl text-[17px] leading-8 text-[#5E6556] md:text-lg">
+          {/* Description */}
+          <p className="mx-auto mt-7 max-w-2xl text-[16px] leading-7 text-[#5E6556] sm:text-[17px] sm:leading-8 md:text-lg">
             Simple, nourishing skincare made with thoughtfully selected
-            ingredients and a slower approach to everyday care.
+            ingredients
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
+            and a slower approach to everyday care.
           </p>
 
+          {/* CTA */}
           <Link
             href="/shop"
-            className="group mt-9 inline-flex items-center gap-4 border-b border-[#66705D] pb-2 text-xs uppercase tracking-[0.3em] text-[#46503F] transition duration-300 hover:border-[#343C31] hover:text-[#343C31]"
+            className="group mt-9 inline-flex items-center gap-4 border-b border-[#66705D] pb-2 text-[11px] uppercase tracking-[0.32em] text-[#46503F] transition-all duration-300 hover:border-[#343C31] hover:text-[#343C31]"
           >
             Discover the Collection
 
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
+            <span className="transition-transform duration-300 group-hover:translate-x-1.5">
               →
             </span>
           </Link>
         </div>
       </section>
 
-      {/* INTRO */}
+      {/* =========================================================
+          INTRO
+      ========================================================= */}
       <section className="bg-[#F5F0E7] px-6 pb-28 pt-14 md:px-10 md:pb-36 md:pt-20">
         <div className="mx-auto max-w-4xl text-center">
+
           <p className="text-[10px] uppercase tracking-[0.4em] text-[#858A78]">
             Thoughtful by nature
           </p>
@@ -83,9 +111,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURED PRODUCT */}
+      {/* =========================================================
+          FEATURED PRODUCT
+      ========================================================= */}
       <section className="bg-[#E9E1D5] px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+
+          {/* Product image */}
           <div className="overflow-hidden">
             <Image
               src="/tallow-balm-featured.png"
@@ -96,7 +128,9 @@ export default function Home() {
             />
           </div>
 
+          {/* Product content */}
           <div className="max-w-xl">
+
             <p className="text-[10px] uppercase tracking-[0.38em] text-[#7D826F]">
               Featured Product
             </p>
@@ -115,7 +149,9 @@ export default function Home() {
               leaving it feeling soft, supple, and cared for.
             </p>
 
+            {/* Product details */}
             <div className="mt-8 grid grid-cols-2 gap-8 border-y border-[#C9C1B5] py-6">
+
               <div>
                 <p className="text-[10px] uppercase tracking-[0.26em] text-[#8B8E7F]">
                   Texture
@@ -135,6 +171,7 @@ export default function Home() {
                   Everyday nourishment
                 </p>
               </div>
+
             </div>
 
             <Link
@@ -147,15 +184,21 @@ export default function Home() {
                 →
               </span>
             </Link>
+
           </div>
         </div>
       </section>
 
-      {/* PHILOSOPHY */}
+      {/* =========================================================
+          PHILOSOPHY
+      ========================================================= */}
       <section className="border-y border-[#D4CEC2] bg-[#EEE8DE]">
         <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
+
+          {/* Left */}
           <div className="flex min-h-[430px] items-center justify-center border-b border-[#D4CEC2] px-8 py-16 text-center lg:border-b-0 lg:border-r">
             <div className="max-w-md">
+
               <p className="text-[10px] uppercase tracking-[0.38em] text-[#838878]">
                 Our Philosophy
               </p>
@@ -165,11 +208,14 @@ export default function Home() {
                 <br />
                 More intention.
               </h2>
+
             </div>
           </div>
 
+          {/* Right */}
           <div className="flex min-h-[430px] items-center px-8 py-16 md:px-14 lg:px-16">
             <div className="max-w-xl">
+
               <p className="text-[10px] uppercase tracking-[0.38em] text-[#7C816F]">
                 Thoughtfully made
               </p>
@@ -191,15 +237,22 @@ export default function Home() {
               >
                 Discover Our Approach
               </Link>
+
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* COLLECTION */}
+      {/* =========================================================
+          COLLECTION
+      ========================================================= */}
       <section className="bg-[#F5F0E7] px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-7xl">
+
+          {/* Heading */}
           <div className="text-center">
+
             <p className="text-[10px] uppercase tracking-[0.4em] text-[#7C8270]">
               The Collection
             </p>
@@ -212,11 +265,17 @@ export default function Home() {
               Nourishing products designed to bring a little more ease to your
               everyday routine.
             </p>
+
           </div>
 
+          {/* Products */}
           <div className="mt-16 grid gap-12 md:grid-cols-3">
+
             {products.map((product) => (
-              <article key={product.name} className="text-center">
+              <article
+                key={product.name}
+                className="text-center"
+              >
                 <div className="aspect-[4/5] bg-[#E5DED2]" />
 
                 <p className="mt-7 text-[10px] uppercase tracking-[0.28em] text-[#888C7C]">
@@ -233,10 +292,13 @@ export default function Home() {
                 >
                   Shop Product
                 </Link>
+
               </article>
             ))}
+
           </div>
 
+          {/* View all */}
           <div className="mt-16 text-center">
             <Link
               href="/shop"
@@ -245,10 +307,13 @@ export default function Home() {
               View the Full Collection
             </Link>
           </div>
+
         </div>
       </section>
 
-      {/* BOTANICAL STORY */}
+      {/* =========================================================
+          BOTANICAL STORY
+      ========================================================= */}
       <section
         className="relative min-h-[620px] bg-cover bg-center bg-no-repeat"
         style={{
@@ -258,7 +323,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#F4EEE4]/8" />
 
         <div className="relative z-10 mx-auto flex min-h-[620px] max-w-7xl items-end px-6 pb-14 md:px-10 md:pb-20">
+
           <div className="max-w-xl bg-[#F4EFE6]/88 p-8 backdrop-blur-sm md:p-11">
+
             <p className="text-[10px] uppercase tracking-[0.38em] text-[#757C69]">
               Our Ritual
             </p>
@@ -272,14 +339,21 @@ export default function Home() {
               designed to make everyday skincare feel like a moment worth
               slowing down for.
             </p>
+
           </div>
+
         </div>
       </section>
 
-      {/* VALUES */}
+      {/* =========================================================
+          VALUES
+      ========================================================= */}
       <section className="bg-[#ECE6DC] px-6 py-24 md:px-10 md:py-28">
         <div className="mx-auto max-w-6xl">
+
           <div className="grid gap-14 text-center md:grid-cols-3">
+
+            {/* Simple */}
             <div>
               <h3 className="font-serif text-2xl text-[#3A4036]">
                 Simple
@@ -290,6 +364,7 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Natural */}
             <div>
               <h3 className="font-serif text-2xl text-[#3A4036]">
                 Natural
@@ -300,6 +375,7 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Intentional */}
             <div>
               <h3 className="font-serif text-2xl text-[#3A4036]">
                 Intentional
@@ -309,13 +385,18 @@ export default function Home() {
                 Thoughtfully created for everyday rituals and lasting use.
               </p>
             </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* =========================================================
+          FINAL CTA
+      ========================================================= */}
       <section className="bg-[#F5F0E7] px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-4xl text-center">
+
           <p className="text-[10px] uppercase tracking-[0.4em] text-[#7B816E]">
             Willow & Tallow
           </p>
@@ -331,12 +412,14 @@ export default function Home() {
 
           <Link
             href="/shop"
-            className="mt-9 inline-block border border-[#5E6755] px-8 py-4 text-xs uppercase tracking-[0.27em] text-[#46503F] transition hover:bg-[#E8E2D7]"
+            className="mt-9 inline-block border border-[#5E6755] px-8 py-4 text-xs uppercase tracking-[0.27em] text-[#46503F] transition duration-300 hover:bg-[#E8E2D7]"
           >
             Shop Willow & Tallow
           </Link>
+
         </div>
       </section>
+
     </main>
   );
 }
