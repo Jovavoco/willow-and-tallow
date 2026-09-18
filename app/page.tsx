@@ -18,7 +18,7 @@ const products = [
 
 export default function Home() {
   return (
-    <main className="bg-[#F5F0E7] text-[#343A31]">
+    <main className="overflow-x-hidden bg-[#F5F0E7] text-[#343A31]">
       {/* =========================================================
           HERO
       ========================================================= */}
@@ -35,26 +35,55 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-b from-transparent via-[#F5F0E7]/45 to-[#F5F0E7]" />
 
         {/* Hero content */}
-        <div className="relative z-10 mx-auto flex min-h-[92vh] w-full max-w-[1600px] flex-col items-center justify-center px-4 pb-24 pt-32 text-center sm:px-6 md:pb-28 md:pt-36">
-          
-          {/* EXTRA LARGE LOGO */}
-          <div className="flex w-full items-center justify-center">
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            flex
+            min-h-[92vh]
+            w-full
+            max-w-[1600px]
+            flex-col
+            items-center
+            justify-center
+            px-4
+            pb-24
+            pt-28
+            text-center
+            sm:px-6
+            md:pb-28
+            md:pt-32
+          "
+        >
+          {/* =====================================================
+              EXTRA LARGE LOGO
+          ===================================================== */}
+          <div
+            className="
+              relative
+              h-[250px]
+              w-full
+              sm:h-[300px]
+              md:h-[350px]
+              lg:h-[390px]
+              xl:h-[420px]
+            "
+          >
             <Image
               src="/willow-tallow-logo.PNG"
               alt="Willow & Tallow"
-              width={1800}
-              height={1200}
+              fill
               priority
+              sizes="100vw"
               className="
-                h-auto
-                w-[115%]
-                max-w-[680px]
                 object-contain
-                sm:max-w-[800px]
-                md:max-w-[1000px]
-                lg:max-w-[1180px]
-                xl:max-w-[1280px]
-                2xl:max-w-[1380px]
+                scale-[1.55]
+                sm:scale-[1.75]
+                md:scale-[2]
+                lg:scale-[2.25]
+                xl:scale-[2.5]
+                2xl:scale-[2.65]
               "
             />
           </div>
@@ -62,25 +91,37 @@ export default function Home() {
           {/* Tagline */}
           <p
             className="
-              -mt-10
+              relative
+              z-20
+              mt-1
               font-serif
               text-xl
               italic
               tracking-[0.025em]
               text-[#69715F]
-              sm:-mt-14
               sm:text-2xl
-              md:-mt-20
               md:text-[1.8rem]
-              lg:-mt-24
-              xl:-mt-28
             "
           >
             Rooted in Nature. Crafted with Tallow.
           </p>
 
           {/* Description */}
-          <p className="mx-auto mt-7 max-w-2xl text-[16px] leading-7 text-[#5E6556] sm:text-[17px] sm:leading-8 md:text-lg">
+          <p
+            className="
+              relative
+              z-20
+              mx-auto
+              mt-7
+              max-w-2xl
+              text-[16px]
+              leading-7
+              text-[#5E6556]
+              sm:text-[17px]
+              sm:leading-8
+              md:text-lg
+            "
+          >
             Simple, nourishing skincare made with thoughtfully selected
             ingredients
             <br className="hidden sm:block" />
@@ -91,7 +132,26 @@ export default function Home() {
           {/* CTA */}
           <Link
             href="/shop"
-            className="group mt-9 inline-flex items-center gap-4 border-b border-[#66705D] pb-2 text-[11px] uppercase tracking-[0.32em] text-[#46503F] transition-all duration-300 hover:border-[#343C31] hover:text-[#343C31]"
+            className="
+              group
+              relative
+              z-20
+              mt-9
+              inline-flex
+              items-center
+              gap-4
+              border-b
+              border-[#66705D]
+              pb-2
+              text-[11px]
+              uppercase
+              tracking-[0.32em]
+              text-[#46503F]
+              transition-all
+              duration-300
+              hover:border-[#343C31]
+              hover:text-[#343C31]
+            "
           >
             Discover the Collection
 
@@ -130,6 +190,7 @@ export default function Home() {
       ========================================================= */}
       <section className="bg-[#E9E1D5] px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          {/* Product Image */}
           <div className="overflow-hidden">
             <Image
               src="/tallow-balm-featured.png"
@@ -140,6 +201,7 @@ export default function Home() {
             />
           </div>
 
+          {/* Product Content */}
           <div className="max-w-xl">
             <p className="text-[10px] uppercase tracking-[0.38em] text-[#7D826F]">
               Featured Product
@@ -264,10 +326,7 @@ export default function Home() {
 
           <div className="mt-16 grid gap-12 md:grid-cols-3">
             {products.map((product) => (
-              <article
-                key={product.name}
-                className="text-center"
-              >
+              <article key={product.name} className="text-center">
                 <div className="aspect-[4/5] bg-[#E5DED2]" />
 
                 <p className="mt-7 text-[10px] uppercase tracking-[0.28em] text-[#888C7C]">
